@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Clock from './components/Clock';
 
-function App() {
+let testProp: string = 'Am I getting passed  to the Clock component?'
+let optionalProp: string = 'You sure are!';
+ 
+// function App() {
+// converting our functional component declaration into an arrow function expression
+      //1         //2
+const App: React.FunctionComponent = () => {
+//1. Arrow function is given the name of 'App'
+//2. After the colon, we are assigning a type to the function
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="App">
+        <div className="verticalCenter">
+        <Clock testProp={testProp} optionalProp={optionalProp} />
+        </div>  
+      </div>
+    );
 }
+
 
 export default App;
